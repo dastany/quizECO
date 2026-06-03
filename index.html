@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Экологический квиз - День защиты детей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="floatingCanvas" class="floating-canvas"></canvas>
+
+<div class="game-container" id="gameContainer" style="display: none;">
+    <div class="game-header">
+        <div class="title">🌍 ЭКОЛОГИЧЕСКИЙ КВИЗ 🌍</div>
+        <button class="end-game-btn" id="endGameBtn">🏆 ЗАВЕРШИТЬ ИГРУ 🏆</button>
+    </div>
+
+    <div class="teams-container">
+        <div class="team-card team1-card">
+            <div class="team-name-wrapper">
+                <input type="text" class="team-name-input" id="team1Name" placeholder="Команда 1" maxlength="20">
+            </div>
+            <div class="team-score" id="team1Score">0</div>
+            <div class="team-badge">⚡</div>
+        </div>
+        <div class="team-card team2-card">
+            <div class="team-name-wrapper">
+                <input type="text" class="team-name-input" id="team2Name" placeholder="Команда 2" maxlength="20">
+            </div>
+            <div class="team-score" id="team2Score">0</div>
+            <div class="team-badge">🎨</div>
+        </div>
+    </div>
+
+    <div class="active-team-bar" id="activeTeamBar">
+        <span>СЕЙЧАС ИГРАЕТ: </span>
+        <span class="active-team-name" id="activeTeamName">Команда 1</span>
+    </div>
+
+    <div class="categories" id="categoriesContainer"></div>
+    <div class="questions-grid" id="questionsGrid"></div>
+
+    <button class="new-game-btn" id="newGameBtn">🔄 НОВАЯ ИГРА 🔄</button>
+    <div class="footer-note">🎯 Выбери вопрос → ответь → начисли очки! 🎯</div>
+</div>
+
+<div id="questionModal" class="modal">
+    <div class="modal-card">
+        <div class="modal-category" id="modalCategory">Природа · 100</div>
+        <div class="question-text" id="modalQuestionText">Загрузка...</div>
+        <div class="points-buttons">
+            <button class="points-btn correct-btn" id="correctBtn">✅ ВЕРНО! + очки</button>
+            <button class="points-btn wrong-btn" id="wrongBtn">❌ НЕ СПРАВИЛИСЬ</button>
+        </div>
+        <button class="close-modal-btn" id="closeModalBtn">✖️ ЗАКРЫТЬ</button>
+        <div class="feedback" id="feedbackMsg"></div>
+    </div>
+</div>
+
+<div id="breakModal" class="modal">
+    <div class="modal-card break-card">
+        <h2>🎉 ОТДЫХ! 🎉</h2>
+        <div class="break-message" id="breakMessage"></div>
+        <div class="break-suggestion">🏃‍♀️ Встаньте, подвигайтесь, попрыгайте! 🏃‍♂️</div>
+        <button class="close-break-btn" id="closeBreakBtn">🏆 ПРОДОЛЖИТЬ ИГРУ 🏆</button>
+    </div>
+</div>
+
+<div id="endModal" class="modal">
+    <div class="modal-card end-modal">
+        <h2>🎉 СПАСИБО ЗА ИГРУ! 🎉</h2>
+        <div class="winner-message" id="winnerMessage"></div>
+        <div class="prize-message">ВСЕ БОЛЬШИЕ МОЛОДЦЫ!<br>🌿 БЕРЕГИТЕ ПРИРОДУ! 🌿</div>
+        <button class="close-end-btn" id="closeEndBtn">🎉 УРА! 🎉</button>
+    </div>
+    <canvas id="fireworksCanvas" class="fireworks-canvas"></canvas>
+</div>
+
+<div id="ageModal" class="modal age-modal">
+    <div class="modal-card age-card">
+        <h2>🌱 ВЫБЕРИТЕ ВОЗРАСТ 🌱</h2>
+        <button class="age-btn" data-age="1-2">1–2 КЛАСС</button>
+        <button class="age-btn" data-age="3-4">3–4 КЛАСС</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
